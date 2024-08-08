@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>Kelvin Nyale Kiti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <a href="script.js"></a>
+    <style>
+        html{
+            scroll-behavior: smooth;
+            transition: 1s;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #020238; 
+            color: white;
+        }
+        header {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1em 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+        }
+
+        /* Menu Button */
+        .menu-btn {
+            display: none; /* Hidden by default */
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 2em;
+        }
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        .profile-pic:hover{
+            width: 300px;
+            height: 300px;
+        }
+        .home, .about, .services, .skills, .contact {
+            height: 90vh;
+            padding: 2em;
+        }
+        .home .animated-text {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 1em;
+            animation: textAnimation 6s infinite;
+        }
+        @keyframes textAnimation {
+            0%, 100% {content: "I am a Graphics Designer";}
+            33% {content: "I am a Web Designer";}
+            66% {content: "I am a Digital Marketer";}
+        }
+        .about, .services, .skills, .contact {
+            margin-top: 2em;
+        }
+        h2{
+            color: teal;
+            align-items: center;
+        }
+        .services .service-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1em;
+            margin: 1em;
+            flex: 1;
+            text-align: center;
+        }
+        .skills{
+            display: flex;
+            flex-direction: column;
+        }
+        .skills .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .skills .skills-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1em;
+            margin: 1em;
+            flex: 1;
+            text-align: center;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        img:hover{
+            height: 150px;
+            width: 150px;
+            border-radius: 10px;
+            transition: .5s;
+        }
+        .skills-desc{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .skills .desc-box{
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1em;
+            margin: 1em;
+            flex: 1;
+            text-align: center;
+        }
+        .contact {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .contact .left {
+            flex: 1;
+            padding-right: 2em;
+        }
+        .contact .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact .right form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact .right form .typing-2{
+            color: teal;
+        }
+        .contact .right-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-radius: 10px;
+        }
+        .contact form label {
+            margin: 0.5em 0;
+        }
+        .contact form input {
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            padding: 0.5em;
+            margin-top: 0.5em;
+        }
+        .contact form textarea{
+            width: 100%;
+            border-radius: 5px;
+            padding: 0.5em;
+            margin-top: 0.5em;
+        }
+        .contact form button {
+            padding: 0.5em 1em;
+            margin-top: 1em;
+            width: 100%;
+            height: 50px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer {
+            background: rgba(255, 255, 255, 0.1); /* Transparent background */
+            padding: 1em 0;
+            height: 50px;
+            text-align: center;
+            color: teal;
+        }    
+        @media (max-width: 768px) {
+            .home, .about, .services, .skills, .contact {
+                height: auto;
+                padding: 1em;
+            }
+            .nav {
+                flex-direction: column;
+            }
+            .nav a {
+                margin: 0.5em 0;
+            }
+            .nav-links {
+                display: none; /* Hidden by default */
+            }
+
+            .nav-links.active {
+                display: block; /* Show when active */
+            }
+
+            .menu-btn {
+                display: block; /* Show menu button on small screens */
+            }
+            /*.nav-links{
+                opacity: 0;
+            }*/
+            .menu-btn{
+                opacity: 1;
+                cursor: pointer;
+            }
+            .home .animated-text {
+                font-size: 1.2em;
+            }
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+            }
+            .services .service-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact .left {
+                padding-right: 0;
+                margin-bottom: 2em;
+            }
+            .contact form div {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-links{
+                opacity: 0;
+            }
+            .menu-btn{
+                opacity: 1;
+                cursor: pointer;
+            }
+            .home .animated-text {
+                font-size: 1em;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+            }
+            .services .service-box {
+                margin: 0.5em;
+                padding: 0.5em;
+            }
+            .contact form div {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            KELVIN NYALE KITI
+        </div>
+        <div class="nav">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="home">
+            <img src="pics/campus19.jpg" alt="Kelvin Nyale Kiti" class="profile-pic">
+            <div class="animated-text">
+                <span class="red">I am a</span>
+                <div class="typing"></div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>ABOUT ME</h2>
+            <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+        </section>
+        <section id="services" class="services">
+            <h2>SERVICES</h2>
+            <div class="service-container">
+                <div class="service-box">
+                    <i class="fas fa-paint-brush"></i><h3>Graphics Design</h3>
+                    <p>Creating stunning graphics for your brand.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-laptop-code"></i><h3>Web Design</h3>
+                    <p>Designing responsive and functional websites.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-bullhorn"></i><h3>Digital Marketing</h3>
+                    <p>Marketing your business effectively online.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-keyboard"></i><h3>Data Entry</h3>
+                    <p>Feeding and storing data accurately based on your service products.</p>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills">
+            <h2>SKILLS</h2>
+            <p>Here are some of my skills:</p>
+            <div class="skills-container">
+                <div class="skills-box">
+                    <h3>Logo Design</h3>
+                    <p>Creating stunning graphics for your brand.</p>
+                    <img src="pics/barbershop.png" alt="">
+                </div>
+                <div class="skills-box">
+                    <h3>Web Design</h3>
+                    <p>Designing responsive and functional websites.</p>
+                    <img src="pics/barber.png" alt="">
+                </div>
+                <div class="skills-box">
+                    <h3>Flyers</h3>
+                    <p>Creating stunning graphical flyers for your business.</p>
+                    <img src="pics/melanin coffee.png" alt="">
+                </div>
+                <div class="skills-box">
+                    <h3>Digital Marketing</h3>
+                    <p>Marketing your business effectively online.</p>
+                    <img src="pics/portfolio.png" alt="">
+                </div>
+                <div class="skills-box">
+                    <h3>Data Entry</h3>
+                    <p>Feeding and storing data accurately based on your service products.</p>
+                </div>
+            </div>            
+            <div class="skills-desc">
+                <div class="desc-box">
+                    <h3>Graphics Design</h3>
+                    <p>Designing Logos, Flyers, Business cards, etc using CorelDraw.</p>
+                </div>
+                <div class="desc-box">
+                    <h3>Frontend development</h3>
+                    <p>I mainly undertake visual websites using basic HTML, CSS and JAVASCRIPT.</p>
+                </div>
+                <div class="desc-box">
+                    <h3>Data Entry and Manipulation</h3>
+                    <p>Storing and manipulating data in a well mannered format using spreadsheets.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <div class="left">
+                <p>You can reach me at:</p>
+                <p><i class="fas fa-envelope"></i> kelvinnyale780@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +254 791558755</p>
+            </div>
+            <div class="right">
+                <div class="right-content">
+                    <form action="">
+                        <div class="typing-2"></div>
+                        <div class="info">
+                            <label for="name">
+                                <input type="text" placeholder="Enter your Name" required>
+                            </label>
+                            <label for="email">
+                                <input type="email" placeholder="Enter email address" required>
+                            </label>
+                        </div>
+                        <label for="subject">
+                            <input type="text" placeholder="Subject Title" required>
+                        </label>
+                        <Textarea cols="100" rows="10" placeholder="Type Your Message Here"></Textarea>
+                        <a href="#">
+                            <button type="submit">SEND</button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="footer" class="footer">
+            <div class="left-side">
+                <p>Designed By
+                    <a href="www.linkedin.com/in/kelvin-nyale-85411b2a1" target="_blank">Kelvin Kiti</a>
+                </p>
+            </div>
+            <div class="right-side">
+                <i class="fas fa-copyright"></i> 8th August, 2024.
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
