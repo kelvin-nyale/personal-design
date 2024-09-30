@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <title>Kelvin Nyale Kiti</title>
+    <title>Kelvin Nyale || Melanin Technologies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <a href="script.js"></a>
     <style>
@@ -22,14 +22,61 @@
             color: white;
         }
         header {
-            position: relative;
+            background: linear-gradient(to bottom right, rgb(2, 3, 39), teal);
+            background-size: 200% 200%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
+        
+            /* Keyframes for rotating the background */
+            @keyframes rotateBackground {
+                0% {
+                    background-position: 0% 0%;
+                }
+                100% {
+                    background-position: 100% 100%;
+                }
+            }
+
+            /* Keyframes for changing the background colors */
+            @keyframes colorChange {
+                0% {
+                    background-color: rgb(2, 3, 39);
+                }
+                50% {
+                    background-color: teal;
+                }
+                100% {
+                    background-color: rgb(2, 3, 39);
+                }
+            }
+        }
+        .logo{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
+            gap: 15px;
+        }
+        .logo-img{
+            height: 35px;
+            width: 35px;
+
+            img{
+                height: 35px;
+                width: 35px;
+            }
+            img:hover{
+                height: 35px;
+                width: 35px;
+            }
+            
+        }
+        span{
+            color: blueviolet;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: xx-large;
+            font-weight: bolder;
         }
         .nav {
             display: flex;
@@ -61,8 +108,41 @@
             margin: 0 auto;
         }
         .profile-pic:hover{
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
+        }
+        .home {
+            background-size: 200% 200%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+            animation: textAnimation 6s infinite;
+            background: linear-gradient(to bottom right, rgb(2, 3, 39), teal);
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
+        }
+        /* Keyframes for rotating the background */
+        @keyframes rotateBackground {
+                0% {
+                    background-position: 0% 0%;
+                }
+                100% {
+                    background-position: 100% 100%;
+                }
+            }
+
+        /* Keyframes for changing the background colors */
+        @keyframes colorChange {
+            0% {
+                background-color: rgb(2, 3, 39);
+            }
+            50% {
+                background-color: teal;
+            }
+            100% {
+                background-color: rgb(2, 3, 39);
+            }
         }
         .home, .about, .services, .skills, .contact {
             height: 90vh;
@@ -73,6 +153,8 @@
             font-size: 1.5em;
             margin-top: 1em;
             animation: textAnimation 6s infinite;
+            background: linear-gradient(to bottom right, rgb(2, 3, 39), rgb(77, 0, 128));
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
         }
         @keyframes textAnimation {
             0%, 100% {content: "I am a Graphics Designer";}
@@ -85,6 +167,38 @@
         h2{
             color: teal;
             align-items: center;
+        }
+        .content{
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            padding: 30 30;
+        }
+        .left1, .center, .right1, .extra{
+            height: 450px;
+            width: 350px;
+            /*border: 1px solid #ccc;*/
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1em;
+            margin-top: 1em;
+            background: linear-gradient(to bottom right, rgb(2, 3, 39), teal);
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
+        }
+        .photo{
+            padding-top: 50px;
+
+            img{
+                height: 150px;
+                width: 150px;
+                border: 3px solid #ccc;
+                border-radius: 50%;
+                padding-left: 50;
+            }
+        }
+        p{
+            align-items: center;
+            padding: 0 30;
         }
         .services .service-box {
             background: rgba(255, 255, 255, 0.1);
@@ -171,7 +285,7 @@
         }
         .contact form input {
             width: 100%;
-            height: 50px;
+            height: 40px;
             border-radius: 5px;
             padding: 0.5em;
             margin-top: 0.5em;
@@ -204,6 +318,15 @@
             .home, .about, .services, .skills, .contact {
                 height: auto;
                 padding: 1em;
+            }
+            .logo{
+
+                span{
+                    color: blueviolet;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: x-large;
+                    font-weight: bolder;
+                }
             }
             .nav {
                 flex-direction: column;
@@ -240,6 +363,17 @@
                 display: block;
                 margin: 0 auto;
             }
+            .about .content{
+                flex-direction: column;
+            }
+            .left1, .center, .right1, .extra{
+                height: auto;
+                padding: 1.5em;
+            }
+            .photo img{
+                height: 100px;
+                width: 100px;
+            }
             .services .service-container {
                 flex-direction: column;
                 align-items: center;
@@ -256,6 +390,15 @@
             }
         }
         @media (max-width: 480px) {
+            .logo{
+                span{
+                    color: blueviolet;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: large;
+                    font-weight: bolder;
+            }
+            }
+
             .nav-links{
                 opacity: 0;
             }
@@ -274,6 +417,10 @@
                 display: block;
                 margin: 0 auto;
             }
+            .left1, .center, .right1, .extra{
+                height: auto;
+                padding: 1em;
+            }
             .services .service-box {
                 margin: 0.5em;
                 padding: 0.5em;
@@ -287,10 +434,14 @@
 <body>
     <header>
         <div class="logo">
-            KELVIN NYALE KITI
+            <div class="logo-img">
+                <img src="PICS/campus19.jpg" alt="">
+            </div>
+            <span>KELVIN NYALE KITI</span>
         </div>
         <div class="nav">
             <div class="nav-links">
+                <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#skills">Skills</a>
@@ -303,19 +454,50 @@
     </header>
     
     <div class="container">
-        <section class="home">
+        <section id="home" class="home">
             <img src="pics/campus19.jpg" alt="Kelvin Nyale Kiti" class="profile-pic">
             <div class="animated-text">
-                <span class="red">I am a</span>
+                <span class="red">A</span>
                 <div class="typing"></div>
             </div>
         </section>
         <section id="about" class="about">
-            <h2>ABOUT ME</h2>
-            <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+            <div class="content">
+                <div class="left1">
+                    <h2>GRAPHICS DESIGN</h2>
+                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <div class="photo">
+                        <img src="PICS/barbershop.png" alt="">
+                    </div>
+                </div>
+                <div class="center">
+                    <h2>CATERING</h2>
+                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <div class="photo">
+                        <img src="PICS/spagetti.avif" alt="">
+                    </div>
+                </div>
+                <div class="right1">
+                    <h2>BARBERING</h2>
+                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <div class="photo">
+                        <img src="PICS/barber.avif" alt="">
+                    </div>
+                </div>
+                <div class="extra">
+                    <h2>WEB DESIGN</h2>
+                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <div class="photo">
+                        <img src="PICS/web.avif" alt="">
+                    </div>
+                    <label>
+                        <a href="https://github.com/kelvin-nyale/personal-design" target="_blank">Click to View</a>
+                    </label>
+                </div>
+            </div>
+            
         </section>
         <section id="services" class="services">
-            <h2>SERVICES</h2>
             <div class="service-container">
                 <div class="service-box">
                     <i class="fas fa-paint-brush"></i><h3>Graphics Design</h3>
@@ -334,10 +516,8 @@
                     <p>Feeding and storing data accurately based on your service products.</p>
                 </div>
             </div>
-        </section>
+        </section><br><br>
         <section id="skills" class="skills">
-            <h2>SKILLS</h2>
-            <p>Here are some of my skills:</p>
             <div class="skills-container">
                 <div class="skills-box">
                     <h3>Logo Design</h3>
@@ -363,7 +543,7 @@
                     <h3>Data Entry</h3>
                     <p>Feeding and storing data accurately based on your service products.</p>
                 </div>
-            </div>            
+            </div>
             <div class="skills-desc">
                 <div class="desc-box">
                     <h3>Graphics Design</h3>
@@ -380,7 +560,6 @@
             </div>
         </section>
         <section id="contact" class="contact">
-            <h2>Contact</h2>
             <div class="left">
                 <p>You can reach me at:</p>
                 <p><i class="fas fa-envelope"></i> kelvinnyale780@gmail.com</p>
@@ -416,7 +595,7 @@
                 </p>
             </div>
             <div class="right-side">
-                <i class="fas fa-copyright"></i> 8th August, 2024.
+                <!--<i class="fas fa-copyright"></i>--> &copy; KELVIN NYALE KITI, 26th August, 2024.
             </div>
         </section>
     </div>
