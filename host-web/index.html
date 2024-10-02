@@ -201,7 +201,10 @@
             padding: 0 30;
         }
         .services .service-box {
-            background: rgba(255, 255, 255, 0.1);
+            animation: textAnimation 6s infinite;
+            background: linear-gradient(to bottom right, rgb(77, 0, 128), rgb(2, 3, 39));
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
+            /*background: rgba(255, 255, 255, 0.1);*/
             border-radius: 10px;
             padding: 1em;
             margin: 1em;
@@ -218,7 +221,10 @@
             flex-wrap: wrap;
         }
         .skills .skills-box {
-            background: rgba(255, 255, 255, 0.1);
+            /*background: rgba(255, 255, 255, 0.1);*/
+            animation: textAnimation 6s infinite;
+            background: linear-gradient(to bottom right, #00f, rgb(2, 3, 39));
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
             border-radius: 10px;
             padding: 1em;
             margin: 1em;
@@ -242,7 +248,10 @@
             flex-wrap: wrap;
         }
         .skills .desc-box{
-            background: rgba(255, 255, 255, 0.1);
+            /*background: rgba(255, 255, 255, 0.1);*/
+            animation: textAnimation 6s infinite;
+            background: linear-gradient(to bottom right, #fff, rgb(2, 3, 39));
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
             border-radius: 10px;
             padding: 1em;
             margin: 1em;
@@ -257,6 +266,9 @@
         .contact .left {
             flex: 1;
             padding-right: 2em;
+            animation: textAnimation 6s infinite;
+            background: linear-gradient(to bottom right, rgb(2, 3, 39), #11013f);
+            animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
         }
         .contact .right {
             flex: 1;
@@ -274,11 +286,14 @@
             display: flex;
             flex-direction: column;
         }
-        .contact form div {
+        .contact form .info {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            gap: 15px;
             border-radius: 10px;
+        }
+        .contact form .info label{
+            width: 300px;
         }
         .contact form label {
             margin: 0.5em 0;
@@ -425,7 +440,7 @@
                 margin: 0.5em;
                 padding: 0.5em;
             }
-            .contact form div {
+            .contact form .info label{
                 flex-direction: column;
             }
         }
@@ -435,7 +450,7 @@
     <header>
         <div class="logo">
             <div class="logo-img">
-                <img src="PICS/campus19.jpg" alt="">
+                <img src="PICS/barbershop.png" alt="">
             </div>
             <span>KELVIN NYALE KITI</span>
         </div>
@@ -464,29 +479,30 @@
         <section id="about" class="about">
             <div class="content">
                 <div class="left1">
-                    <h2>GRAPHICS DESIGN</h2>
-                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <h2>GRAPHIC DESIGN</h2>
+                    <p>Good at designing both graphical and textual logos, flyers, posters, business and wedding cards.</p>
                     <div class="photo">
                         <img src="PICS/barbershop.png" alt="">
                     </div>
+                    <a href="https://www.linkedin.com/in/kelvin-nyale-85411b2a1/" target="_blank">View Graphics</a>
                 </div>
                 <div class="center">
                     <h2>CATERING</h2>
-                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <p>Having interest and profession in catering, I am here to ensure desires of flavor and tasty meals of your choice are fulfilled.</p>
                     <div class="photo">
                         <img src="PICS/spagetti.avif" alt="">
                     </div>
                 </div>
                 <div class="right1">
                     <h2>BARBERING</h2>
-                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <p>Welcome to our shops; Mombasa, Nairobi and Limuru branches, where all the services you desire are our fulfillment.</p>
                     <div class="photo">
                         <img src="PICS/barber.avif" alt="">
                     </div>
                 </div>
                 <div class="extra">
                     <h2>WEB DESIGN</h2>
-                    <p>Hello! My name is Kelvin Nyale Kiti. I am a Graphics Designer, Web Designer, and Digital Marketer. I am passionate about creating visually appealing designs and effective marketing strategies.</p>
+                    <p>Good at modelling and simulating visually appealing fully, functional and responsive websites.</p>
                     <div class="photo">
                         <img src="PICS/web.avif" alt="">
                     </div>
@@ -495,7 +511,6 @@
                     </label>
                 </div>
             </div>
-            
         </section>
         <section id="services" class="services">
             <div class="service-container">
@@ -516,7 +531,7 @@
                     <p>Feeding and storing data accurately based on your service products.</p>
                 </div>
             </div>
-        </section><br><br>
+        </section><br>
         <section id="skills" class="skills">
             <div class="skills-container">
                 <div class="skills-box">
@@ -547,7 +562,7 @@
             <div class="skills-desc">
                 <div class="desc-box">
                     <h3>Graphics Design</h3>
-                    <p>Designing Logos, Flyers, Business cards, etc using CorelDraw.</p>
+                    <p>Designing Logos, Flyers, Business/wedding cards, posters.</p>
                 </div>
                 <div class="desc-box">
                     <h3>Frontend development</h3>
@@ -564,6 +579,12 @@
                 <p>You can reach me at:</p>
                 <p><i class="fas fa-envelope"></i> kelvinnyale780@gmail.com</p>
                 <p><i class="fas fa-phone"></i> +254 791558755</p>
+                <p><i class="fab fa-whatsapp"></i> +254 791558755</p>
+                <p><i class="fab fa-facebook"></i> Kelvin Nyale</p>
+                <p><i class="fab fa-instagram"></i> Kelvin-Nyale</p>
+                <p><i class="fab fa-twitter"></i> @Kelvin Nyale</p>
+                <p><i class="fab fa-linkedin"></i> Kelvin Nyale</p>
+                <p><i class="fab fa-github"></i> Kelvin-Nyale</p>
             </div>
             <div class="right">
                 <div class="right-content">
