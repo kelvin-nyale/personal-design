@@ -29,6 +29,11 @@
             justify-content: space-between;
             align-items: center;
             animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
+            position: fixed; /* Sticks the navbar at the top */
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            z-index: 1000;
         
             /* Keyframes for rotating the background */
             @keyframes rotateBackground {
