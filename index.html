@@ -31,6 +31,8 @@
             align-items: center;
             animation: rotateBackground 10s infinite linear, colorChange 10s infinite linear;
             position: fixed; 
+            z-index: 1000; /* Ensure the navbar is on top of other elements */
+            padding: 10px;
         
             /* Keyframes for rotating the background */
             @keyframes rotateBackground {
